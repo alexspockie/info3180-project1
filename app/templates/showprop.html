@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block css %} 
+<link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+{% endblock%}
+{% block main %}
+    <div class="outcontain">
+        <div class="contain2">
+            <img src="{{url_for('get_image', filename=property.photourl) }}" class="propimg2">
+            <div class="probox">
+                <h3>
+                    {{ property.title }}
+                </h3>
+                <p class="propprice inlinep">{{ property.price }}</p> <!-- consider using inline element instead-->
+                <p class="proptype">{{ property.ptype}}</p>
+                <p class="propel"> {{ property.description }}</p>
+                <p class="propbed"><i class="fas fa-bed"></i> {{ property.rooms }} Bedrooms</p>
+                <p class="propbath"><i class='fas fa-bath'></i> {{ property.bathrooms }} Bathrooms</p>
+                <p><i class='fas fa-map-marker-alt propel'></i> {{ property.location }} </p>
+                <button type="button" class="emailbutton">Email Realtor</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
